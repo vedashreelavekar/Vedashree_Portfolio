@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Your pastel palette */
+    --color-bg: #f9f4f0;
+    --color-lavender: #d8c9e8;
+    --color-rose: #f2c4ce;
+    --color-sage: #c8dbbe;
+    --color-cream: #fef6e4;
+    --color-text: #4a4a4a;
+    --color-text-light: #8a7f8d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 40px;
+}
+
+/* ---- HERO ---- */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #cae1f0, #b89ec6);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-welcome {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    letter-spacing: 3px;
+    text-transform: lowercase;
+    margin-bottom: 10px;
+}
+
+.hero-name {
+    font-size: 5rem;
+    color: var(--color-text);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-tagline {
+    font-size: 1.3rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+#rain-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* ---- CUSTOM CURSOR ---- */
+* {
+    cursor: none;
+}
+
+.custom-cursor {
+    position: fixed;
+    font-size: 1.2rem;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+    filter: brightness(0.8) saturate(1.2);
+}
+
+/* ---- SCROLL INDICATOR ---- */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text-light);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: lowercase;
+    animation: bounce 2s infinite;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--color-text-light), transparent);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+}
