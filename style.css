@@ -290,3 +290,22 @@ section {
     position: relative;
     z-index: 1;
 }
+
+/* ---- SCROLL MAGIC SETUP ---- */
+body {
+    overflow-x: hidden;
+}
+
+#hero {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#about {
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
+    opacity: 1;
+    clip-path: inset(0 50% 0 50%);
+}

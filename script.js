@@ -70,32 +70,29 @@ chunks.forEach(chunk => observer.observe(chunk));
 // ---- GSAP SCRUB ANIMATIONS ----
 gsap.registerPlugin(ScrollTrigger);
 
-// Hero fades out
+// Hero fades out as about covers it
 gsap.to("#hero", {
     scrollTrigger: {
         trigger: "#about",
-        start: "top 90%",
-        end: "top 20%",
-        scrub: 1,
+        start: "top 80%",
+        end: "top 10%",
+        scrub: 1.5,
     },
     opacity: 0,
     ease: "none"
 });
 
-// About fades in at same time
-gsap.fromTo("#about",
-    { opacity: 0 },
-    {
-        opacity: 1,
-        ease: "none",
-        scrollTrigger: {
-            trigger: "#about",
-            start: "top 90%",
-            end: "top 20%",
-            scrub: 1,
-        }
-    }
-);
+gsap.to("#about", {
+    scrollTrigger: {
+        trigger: "#about",
+        start: "top 80%",
+        end: "top 10%",
+        scrub: 1.5,
+    },
+    opacity: 1,
+    clipPath: "inset(0 0% 0 0%)",
+    ease: "none"
+});
 
 // Polaroids scrub animations
 gsap.from(".p1", {
@@ -128,6 +125,26 @@ gsap.from(".p3", {
     x: -350, opacity: 0, rotation: -15
 });
 
+// gsap.from(".about-chunk", {
+//     scrollTrigger: {
+//         trigger: "#about",
+//         start: "top bottom",
+//         end: "top 20%",
+//         scrub: 1.5,
+//     },
+//     y: 60, opacity: 0, stagger: 0.1
+// });
+
+// gsap.from(".about-heading", {
+//     scrollTrigger: {
+//         trigger: "#about",
+//         start: "top bottom",
+//         end: "top 30%",
+//         scrub: 1,
+//     },
+//     y: -50, opacity: 0
+// });
+
 gsap.from(".about-chunk", {
     scrollTrigger: {
         trigger: "#about",
@@ -135,7 +152,7 @@ gsap.from(".about-chunk", {
         end: "top 20%",
         scrub: 1.5,
     },
-    y: 60, opacity: 0, stagger: 0.1
+    x: 300, opacity: 0, stagger: 0.1
 });
 
 gsap.from(".about-heading", {
@@ -145,7 +162,7 @@ gsap.from(".about-heading", {
         end: "top 30%",
         scrub: 1,
     },
-    y: -50, opacity: 0
+    x: 300, opacity: 0
 });
 
 gsap.from(".about-vine", {
