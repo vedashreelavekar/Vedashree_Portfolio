@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vedashree | Portfolio</title>
@@ -28,7 +30,50 @@
 </section>
 
     <!-- About Section -->
-    <section id="about"></section>
+<section id="about">
+    <canvas id="petals-canvas"></canvas>
+    
+    <div class="about-bg-texture"></div>
+
+    <div class="about-inner">
+        <!-- Polaroids scattered -->
+        <div class="polaroid p1">
+            <img src="assets/images/photo1.jpg" alt="Vedashree">
+        </div>
+        <div class="polaroid p2">
+            <img src="assets/images/photo2.jpeg" alt="Vedashree">
+        </div>
+        <div class="polaroid p3">
+            <img src="assets/images/photo3.JPG" alt="Vedashree">
+        </div>
+
+        <!-- Text content -->
+        <div class="about-text-container">
+            <p class="section-label">about me</p>
+            <h2 class="about-heading">
+             Hi, I'm Vedashree Lavekar <span class="kar-word">
+             <img src="assets/images/puppy.png" class="puppy-wave" alt="">
+             </span>
+            </h2>
+            <div class="about-chunk">
+                <p>A Computer Engineering student by degree, but a curious soul by nature. I'm the kind of person who stops mid-trail to admire clouds, chases soft breezes, and finds joy in the smallest things - a butterfly, a good meal, the first few minutes of rain.</p>
+            </div>
+            <div class="about-chunk">
+                <p>I paint, I craft, I dance a little when the mood hits. I watch Asian dramas, obsess over superbikes I can't name yet, and live by one rule - we got one life, so enjoy every bit of it.</p>
+            </div>
+            <div class="about-chunk">
+                <p>Coding and I didn't start as friends. I once called it "insects and bugs" - too small, too crowded, too confusing. But somewhere between my first project and my first internship, something shifted. Turns out coding is a lot like maths - learning the formula feels hard, but once you practice enough problems, it just clicks. And now I feel the fire.</p>
+            </div>
+            <div class="about-chunk">
+                <p>I don't have a fixed picture of my future. I just know that it'll be full of surprise, growth, and things I haven't discovered yet - technical, creative, or completely unexpected.</p>
+            </div>
+            <div class="about-chunk">
+                <p class="about-last">Currently exploring. Always growing. Occasionally eating junk food.</p>
+            </div>
+        </div>
+    </div>
+    <img src="assets/images/vine.png" class="about-vine" alt="">
+</section>
 
     <!-- Skills Section -->
     <section id="skills"></section>
@@ -49,5 +94,6 @@
     <section id="contact"></section>
 
     <script src="script.js"></script>
+
 </body>
 </html>

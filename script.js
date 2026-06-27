@@ -49,3 +49,111 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
 });
+
+// ---- ABOUT TEXT CHUNKS SCROLL REVEAL ----
+const chunks = document.querySelectorAll('.about-chunk');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, index * 200);
+        } else {
+            entry.target.classList.remove('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+chunks.forEach(chunk => observer.observe(chunk));
+
+// ---- GSAP SCRUB ANIMATIONS ----
+gsap.registerPlugin(ScrollTrigger);
+
+// Hero fades out
+gsap.to("#hero", {
+    scrollTrigger: {
+        trigger: "#about",
+        start: "top 90%",
+        end: "top 20%",
+        scrub: 1,
+    },
+    opacity: 0,
+    ease: "none"
+});
+
+// About fades in at same time
+gsap.fromTo("#about",
+    { opacity: 0 },
+    {
+        opacity: 1,
+        ease: "none",
+        scrollTrigger: {
+            trigger: "#about",
+            start: "top 90%",
+            end: "top 20%",
+            scrub: 1,
+        }
+    }
+);
+
+// Polaroids scrub animations
+gsap.from(".p1", {
+    scrollTrigger: {
+        trigger: "#about",
+        start: "top bottom",
+        end: "top 30%",
+        scrub: 1.5,
+    },
+    x: -300, opacity: 0, rotation: -25
+});
+
+gsap.from(".p2", {
+    scrollTrigger: {
+        trigger: "#about",
+        start: "top bottom",
+        end: "top 20%",
+        scrub: 2,
+    },
+    x: -400, opacity: 0, rotation: 20
+});
+
+gsap.from(".p3", {
+    scrollTrigger: {
+        trigger: "#about",
+        start: "top bottom",
+        end: "top 10%",
+        scrub: 1.8,
+    },
+    x: -350, opacity: 0, rotation: -15
+});
+
+gsap.from(".about-chunk", {
+    scrollTrigger: {
+        trigger: "#about",
+        start: "top bottom",
+        end: "top 20%",
+        scrub: 1.5,
+    },
+    y: 60, opacity: 0, stagger: 0.1
+});
+
+gsap.from(".about-heading", {
+    scrollTrigger: {
+        trigger: "#about",
+        start: "top bottom",
+        end: "top 30%",
+        scrub: 1,
+    },
+    y: -50, opacity: 0
+});
+
+gsap.from(".about-vine", {
+    scrollTrigger: {
+        trigger: "#about",
+        start: "top bottom",
+        end: "top 20%",
+        scrub: 1.5,
+    },
+    x: 150, opacity: 0
+});
