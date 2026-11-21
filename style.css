@@ -309,3 +309,74 @@ body {
     opacity: 1;
     clip-path: inset(0 50% 0 50%);
 }
+
+/* ---- SKILLS ---- */
+#skills {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #f0e8f5 0%, #fef0f3 100%);
+    position: relative;
+}
+
+.skills-inner {
+    max-width: 900px;
+    width: 100%;
+    padding: 60px 40px;
+}
+
+.skills-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #3d2f40;
+    margin-bottom: 50px;
+}
+
+.skills-group {
+    margin-bottom: 35px;
+}
+
+.skills-group-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    color: #9e8fa1;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.skills-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pill {
+    background: white;
+    color: #6b5b6e;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border: 1px solid rgba(210, 180, 220, 0.3);
+    transition: all 0.3s ease;
+}
+
+.pill:hover {
+    background: linear-gradient(135deg, var(--color-rose), var(--color-lavender));
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.pill.soft {
+    background: linear-gradient(135deg, #fef0f3, #f0e8f5);
+    border: 1px solid rgba(210, 180, 220, 0.5);
+}
+
+.pill.soft:hover {
+    background: linear-gradient(135deg, var(--color-lavender), var(--color-rose));
+    color: white;
+}
